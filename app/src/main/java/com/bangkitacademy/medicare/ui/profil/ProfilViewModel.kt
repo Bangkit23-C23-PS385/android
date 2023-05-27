@@ -1,10 +1,10 @@
-package com.bangkitacademy.medicare.ui.notifications
+package com.bangkitacademy.medicare.ui.profil
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class NotificationsViewModel : ViewModel() {
+class ProfilViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         value = "This is notifications Fragment"

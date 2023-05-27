@@ -3,6 +3,19 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="invalid_email">Format email harus benar!</string>
+    <string name="invalid_password">Password harus berisi 8 karakter!</string>
+    <string name="title_login_page">Masuk</string>
+    <string name="email">Email</string>
+    <string name="password">Kata Sandi</string>
+    <string name="login_btn">MASUK</string>
+    <string name="no_account">Belum punya akun?</string>
+    <string name="register">Daftar Sekarang!</string>
+    <string name="title_register_page">Daftar</string>
+    <string name="name">Nama</string>
+    <string name="has_account">Sudah mempunyai akun?</string>
+    <string name="login">Masuk Sekarang!</string>
+    <string name="register_btn">DAFTAR</string>
+    <string name="confirm_password">Konfirmasi Kata Sandi</string>
 </resources>

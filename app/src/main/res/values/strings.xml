@@ -4,4 +4,7 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_profil">Profil</string>
     <string name="foto_profil">Foto Profil</string>
+    <string name="tv_umur">%s tahun</string>
+    <string name="tv_berat_badan">%s kg</string>
+    <string name="tv_tinggi_badan">%s cm</string>
 </resources>

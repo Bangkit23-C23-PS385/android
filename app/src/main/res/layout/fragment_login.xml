@@ -114,12 +114,13 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/loginButton"
             android:layout_width="122dp"
             android:layout_height="48dp"
             android:layout_marginTop="32dp"
             android:textSize="16sp"
+            app:cornerRadius="12sp"
             android:text="@string/login_btn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -13,4 +13,35 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="header">
+        <item name="android:textSize">30sp</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+
+    <style name="body2_sb">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/poppins_semi_bold</item>
+    </style>
+
+    <style name="body2_m">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="body1_m">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="body1_sb">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/poppins_semi_bold</item>
+    </style>
+
+    <style name="card_user_name" parent="Widget.Material3.CardView.Elevated">
+        <item name="fontStyle">@style/body2_sb</item>
+        <item name="cardBackgroundColor">@drawable/gradient1</item>
+    </style>
+
 </resources>

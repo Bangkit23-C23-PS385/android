@@ -30,16 +30,17 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_nama"
-            app:cardBackgroundColor="?attr/colorAccent"
             android:layout_width="0dp"
             android:layout_height="96dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
+            app:cardBackgroundColor="#F2F4F7"
             app:cardElevation="64dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/topAppBar">
+            app:layout_constraintTop_toBottomOf="@id/topAppBar"
+            app:strokeWidth="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -76,10 +77,10 @@
             android:layout_marginStart="16sp"
             android:layout_marginTop="32sp"
             android:layout_marginEnd="16sp"
+            android:text="Email"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_nama"
-            tools:text="Email" />
+            app:layout_constraintTop_toBottomOf="@id/card_nama" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/lyt_email"
@@ -109,10 +110,10 @@
             android:layout_marginStart="16sp"
             android:layout_marginTop="16sp"
             android:layout_marginEnd="16sp"
+            android:text="Umur"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/lyt_email"
-            tools:text="Umur" />
+            app:layout_constraintTop_toBottomOf="@id/lyt_email" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/lyt_umur"
@@ -142,10 +143,10 @@
             android:layout_marginStart="16sp"
             android:layout_marginTop="16sp"
             android:layout_marginEnd="16sp"
+            android:text="Tinggi Badan"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/lyt_umur"
-            tools:text="Tinggi Badan" />
+            app:layout_constraintTop_toBottomOf="@id/lyt_umur" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/lyt_tb"
@@ -175,10 +176,10 @@
             android:layout_marginStart="16sp"
             android:layout_marginTop="16sp"
             android:layout_marginEnd="16sp"
+            android:text="Berat Badan"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/lyt_tb"
-            tools:text="Berat Badan" />
+            app:layout_constraintTop_toBottomOf="@id/lyt_tb" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/lyt_bb"
@@ -204,19 +205,39 @@
             style="@style/body1_sb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="16dp"
             android:gravity="center"
             android:paddingHorizontal="32dp"
             android:paddingVertical="10dp"
             android:text="KELUAR"
+            app:backgroundTint="@color/danger_600"
             app:cornerRadius="12dp"
             app:icon="@drawable/ic_sign_out"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lyt_bb"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/lyt_bb" />
+            app:strokeColor="@color/danger_600" />
+
+        <RelativeLayout
+            android:id="@+id/view_loading"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+        </RelativeLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </ScrollView>

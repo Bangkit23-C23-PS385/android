@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bangkitacademy.medicare.adapter.LoadingStateAdapter
 import com.bangkitacademy.medicare.adapter.NewsListAdapter
 import com.bangkitacademy.medicare.databinding.FragmentBerandaBinding
 import com.bangkitacademy.medicare.utils.ViewModelFactory
@@ -44,7 +46,30 @@ class BerandaFragment : Fragment() {
 
     private fun getNews() {
         val adapter = NewsListAdapter()
-        binding.rvBeranda.adapter = adapter
+
+        adapter.addLoadStateListener {
+            when (it.refresh) {
+                is LoadState.Loading -> {
+                    binding.progressBar.visibility = View.VISIBLE
+                    binding.rvBeranda.visibility = View.GONE
+                }
+                is LoadState.Error -> {
+                    binding.progressBar.visibility = View.GONE
+                    binding.rvBeranda.visibility = View.VISIBLE
+                }
+                is LoadState.NotLoading -> {
+                    binding.progressBar.visibility = View.GONE
+                    binding.rvBeranda.visibility = View.VISIBLE
+                }
+            }
+        }
+
+        binding.rvBeranda.adapter = adapter.withLoadStateFooter(
+            footer = LoadingStateAdapter {
+                adapter.retry()
+            }
+        )
+
         viewModel.news.observe(viewLifecycleOwner) {
             adapter.submitData(viewLifecycleOwner.lifecycle, it)
         }

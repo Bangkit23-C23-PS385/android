@@ -7,9 +7,9 @@
         android:title="@string/title_beranda" />
 
     <item
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_prediction"
         android:icon="@drawable/ic_prediksi"
-        android:title="@string/title_dashboard" />
+        android:title="@string/title_prediction" />
 
     <item
         android:id="@+id/navigation_profil"

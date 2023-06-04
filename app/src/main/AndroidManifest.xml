@@ -26,6 +26,9 @@
         <activity
             android:name=".ui.auth.AuthenticationActivity"
             android:exported="false" />
+        <activity
+            android:name=".ui.resultprediction.ResultPredictionActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

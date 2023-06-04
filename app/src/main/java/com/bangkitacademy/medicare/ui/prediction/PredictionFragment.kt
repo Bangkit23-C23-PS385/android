@@ -1,5 +1,6 @@
 package com.bangkitacademy.medicare.ui.prediction
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.bangkitacademy.medicare.R
 import com.bangkitacademy.medicare.databinding.FragmentPredictionBinding
+import com.bangkitacademy.medicare.ui.resultprediction.ResultPredictionActivity
 
 class PredictionFragment : Fragment() {
 
@@ -42,6 +44,11 @@ class PredictionFragment : Fragment() {
 
         dropDownActivity()
         addSymptom(savedInstanceState)
+
+        binding.predictionButton.setOnClickListener {
+            val intent = Intent(requireContext(), ResultPredictionActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun addSymptom(savedInstanceState: Bundle?) {

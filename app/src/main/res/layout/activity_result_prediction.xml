@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_scrollFlags="scroll|enterAlways">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:gravity="center_vertical"
+            app:navigationIcon="@drawable/ic_arrow_left"
+            app:title="Hasil Prediksi"
+            app:titleTextAppearance="@style/header" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:src="@drawable/ic_result_prediction"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/symptom_name"
+                style="@style/subtitle2_sb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                android:text="Anemia" />
+
+            <TextView
+                android:id="@+id/symptom_description"
+                style="@style/body2_r"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginHorizontal="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/symptom_name"
+                android:text="Anemia adalah kondisi medis di mana tubuh tidak memiliki jumlah sel darah merah yang cukup atau hemoglobin yang cukup dalam sel darah merah untuk membawa oksigen ke seluruh tubuh dengan baik. Hemoglobin adalah protein dalam sel darah merah yang membantu mengikat oksigen dan mengirimkannya ke seluruh tubuh." />
+
+            <TextView
+                android:id="@+id/prevention_title"
+                style="@style/subtitle2_sb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/symptom_description"
+                android:text="Cara Pencegahan" />
+
+            <TextView
+                android:id="@+id/prevention_description"
+                style="@style/body2_r"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginHorizontal="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/prevention_title"
+                android:text="Pencegahan anemia tergantung pada penyebabnya, namun beberapa cara pencegahan anemia yang umumnya dapat dilakukan adalah dengan mengonsumsi makanan yang sehat dan seimbang, mengonsumsi vitamin B12 dan asam folat, menghindari perdarahan, menjalani pemeriksaan kesehatan secara teratur, dan mengonsumsi suplemen jika direkomendasikan oleh dokter. Penting untuk berkonsultasi dengan dokter atau ahli gizi untuk mengetahui cara terbaik untuk mencegah anemia yang sesuai dengan kondisi dan kebutuhan individu." />
+
+            <TextView
+                android:id="@+id/medicine_title"
+                style="@style/subtitle2_sb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/prevention_description"
+                android:text="Saran obat buat kamu" />
+
+            <TextView
+                android:id="@+id/suggested_medicine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginHorizontal="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/medicine_title"
+                android:text="Paracetamol, Amoxilin, Granisetron"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

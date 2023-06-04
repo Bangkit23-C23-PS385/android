@@ -5,10 +5,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.bangkitacademy.medicare.databinding.FragmentProfilBinding
 import com.bangkitacademy.medicare.ui.editprofil.EditProfilActivity
+import com.google.android.material.snackbar.Snackbar
 
 class ProfilFragment : Fragment() {
 
@@ -40,7 +42,20 @@ class ProfilFragment : Fragment() {
             startActivity(intent)
         }
 
+        binding.statusKesehatan.setOnClickListener {
+            showSnakcBar("Fitur ini belum tersedia")
+        }
+
+        binding.indeksMassaTubuh.setOnClickListener {
+            showSnakcBar("Fitur ini belum tersedia")
+        }
+
     }
+
+    private fun showSnakcBar(message: String) {
+        Snackbar.make(requireView(), message, Snackbar.LENGTH_SHORT).show()
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

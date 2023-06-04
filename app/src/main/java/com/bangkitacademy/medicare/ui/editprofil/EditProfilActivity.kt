@@ -3,6 +3,7 @@ package com.bangkitacademy.medicare.ui.editprofil
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import com.bangkitacademy.medicare.R
 import com.bangkitacademy.medicare.databinding.ActivityEditProfilBinding
 import com.bangkitacademy.medicare.databinding.ActivityMainBinding
@@ -24,6 +25,7 @@ class EditProfilActivity : AppCompatActivity() {
             onBackPressed()
         }
 
+
         openDatePicker()
 
     }
@@ -42,4 +44,5 @@ class EditProfilActivity : AppCompatActivity() {
             }
         }
     }
+
 }

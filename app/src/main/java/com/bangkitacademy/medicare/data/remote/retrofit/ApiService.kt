@@ -11,11 +11,10 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface ApiService {
-
-    @POST("login")
+    @POST("v1/login")
     suspend fun login(@Body body: LoginRequest): LoginResponse
 
-    @POST("register")
+    @POST("v1/register")
     suspend fun register(@Body body: RegisterRequest): RegisterResponse
 
     @GET("users/{userId}")

@@ -19,6 +19,11 @@
         <item name="android:fontFamily">@font/poppins_bold</item>
     </style>
 
+    <style name="header5_sb">
+        <item name="android:textSize">30sp</item>
+        <item name="android:fontFamily">@font/poppins_semi_bold</item>
+    </style>
+
     <style name="subtitle2_sb">
         <item name="android:textSize">18sp</item>
         <item name="android:fontFamily">@font/poppins_semi_bold</item>

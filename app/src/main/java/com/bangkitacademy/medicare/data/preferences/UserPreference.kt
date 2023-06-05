@@ -14,7 +14,9 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
             UserModel(
                 preferences[NAME_KEY] ?: "",
                 preferences[USERID_KEY] ?: "",
-                preferences[TOKEN_KEY] ?: ""
+                preferences[TOKEN_KEY] ?: "",
+                preferences[EMAIL_KEY] ?: "",
+                preferences[USERNAME_KEY] ?: ""
             )
         }
     }
@@ -22,8 +24,10 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
     suspend fun saveUser(user: UserModel) {
         dataStore.edit { preferences ->
             preferences[NAME_KEY] = user.name
-            preferences[USERID_KEY] = user.userId
+            preferences[USERID_KEY] = user.id
             preferences[TOKEN_KEY] = user.token
+            preferences[EMAIL_KEY] = user.email
+            preferences[USERNAME_KEY] = user.username
         }
     }
 
@@ -40,6 +44,8 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
         private val NAME_KEY = stringPreferencesKey("name")
         private val USERID_KEY = stringPreferencesKey("userId")
         private val TOKEN_KEY = stringPreferencesKey("token")
+        private val EMAIL_KEY = stringPreferencesKey("email")
+        private val USERNAME_KEY = stringPreferencesKey("username")
 
         fun getInstance(dataStore: DataStore<Preferences>): UserPreference {
             return INSTANCE ?: synchronized(this) {

@@ -6,7 +6,7 @@ data class GetUserResponse(
     val data: Data,
 )
 
-data class Data(
+data class Data2(
     val id: Int,
     val name: String,
     val email: String,

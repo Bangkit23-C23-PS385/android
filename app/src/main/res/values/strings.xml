@@ -9,8 +9,8 @@
     <string name="tv_tinggi_badan">%s cm</string>
     <string name="title_notifications">Notifications</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="invalid_email">Format email harus benar!</string>
-    <string name="invalid_password">Password harus berisi 8 karakter!</string>
+    <string name="invalid_email">Format email harus benar</string>
+    <string name="invalid_password">Kata sandi harus mengandung angka dan karakter</string>
     <string name="title_login_page">Masuk</string>
     <string name="email">Email</string>
     <string name="password">Kata Sandi</string>
@@ -27,6 +27,19 @@
     <string name="prediction_button">PREDIKSI</string>
     <string name="hint_symptom">Gejala</string>
     <string name="fab_content_desc">Tambah Gejala</string>
+    <string name="username">Username</string>
+    <string name="emailOrUsername">Username atau Email</string>
+    <string name="name_empty">Silahkan isi nama terlebih dahulu</string>
+    <string name="email_empty">Silahkan isi email terlebih dahulu</string>
+    <string name="username_empty">Silahkan isi username terlebih dahulu</string>
+    <string name="password_empty">Silahkan isi kata sandi terlebih dahulu</string>
+    <string name="confirm_password_empty">Ulangi kata sandi</string>
+    <string name="confirm_password_not_match">Kata sandi tidak cocok</string>
+    <string name="email_or_username_empty">Silahkan isi username atau email terlebih dahulu</string>
+    <string name="title_verify_page">Verifikasi Akun</string>
+    <string name="verify">Untuk melakukan login, kamu perlu verifikasi akun kamu terlebih dahulu. Kami telah mengirim e-mail verifikasi kepada email kamu. Silahkan cek email kamu. Setelah email telah aktif, selanjutnya silahkan Masuk kembali.</string>
+    <string name="password_too_short">Kata sandi harus berisi minimal 8 karakter</string>
+    <string name="username_too_short">Username harus berisi minimal 5 karakter</string>
     <string-array name="gejala">
         <item>Otot lemah</item>
         <item>Lesu</item>

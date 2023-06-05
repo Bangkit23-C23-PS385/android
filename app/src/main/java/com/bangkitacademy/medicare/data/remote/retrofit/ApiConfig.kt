@@ -9,7 +9,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 class ApiConfig {
     companion object {
         var token = ""
-        var BASE_URL = ""
 
         fun getApiService(): ApiService {
             val loggingInterceptor =
@@ -29,7 +28,7 @@ class ApiConfig {
                 .build()
 
             val retrofit = Retrofit.Builder()
-                .baseUrl("")
+                .baseUrl("https://medicure-backend-qh7644hmya-as.a.run.app/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()

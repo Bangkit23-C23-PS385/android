@@ -34,14 +34,14 @@
         <item name="android:fontFamily">@font/poppins_semi_bold</item>
     </style>
 
-    <style name="body2_m">
-        <item name="android:textSize">14sp</item>
-        <item name="android:fontFamily">@font/poppins_medium</item>
-    </style>
-
     <style name="body2_r">
         <item name="android:textSize">14sp</item>
         <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="body2_m">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
     </style>
 
     <style name="body1_m">

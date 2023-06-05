@@ -30,8 +30,7 @@
             android:layout_marginEnd="16dp"
             android:text="@string/title_login_page"
             android:textColor="@color/black"
-            android:textSize="30sp"
-            android:textStyle="bold"
+            style="@style/header5_sb"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -43,9 +42,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
-            android:text="@string/email"
+            android:text="@string/emailOrUsername"
             android:textColor="@color/black"
-            android:textSize="14sp"
+            style="@style/body2_m"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
 
@@ -61,15 +60,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/emailTextView"
-            app:startIconDrawable="@drawable/ic_baseline_email_24">
+            app:startIconDrawable="@drawable/user_circle">
 
-            <com.bangkitacademy.medicare.customview.CustomEditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:hint="@string/email"
-                android:textSize="16sp"
+                android:hint="@string/emailOrUsername"
+                style="@style/body1_m"
                 app:layout_constraintTop_toBottomOf="@id/emailTextView"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -84,7 +82,7 @@
             android:layout_marginBottom="6dp"
             android:text="@string/password"
             android:textColor="@color/black"
-            android:textSize="14sp"
+            style="@style/body2_m"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/emailEditTextLayout" />
 
@@ -100,15 +98,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passwordTextView"
+            app:passwordToggleEnabled="true"
             app:startIconDrawable="@drawable/ic_baseline_lock_24">
 
-            <com.bangkitacademy.medicare.customview.CustomEditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingEnd="48dp"
                 android:inputType="textPassword"
                 android:hint="@string/password"
-                android:textSize="16sp"
+                style="@style/body1_m"
+                app:passwordToggleEnabled="true"
                 app:layout_constraintTop_toBottomOf="@id/passwordTextView"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -116,15 +117,18 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/loginButton"
-            android:layout_width="122dp"
-            android:layout_height="48dp"
+            style="@style/body1_sb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
             android:layout_marginTop="32dp"
-            android:textSize="16sp"
-            app:cornerRadius="12sp"
+            android:paddingHorizontal="32dp"
+            android:paddingVertical="10dp"
             android:text="@string/login_btn"
+            app:cornerRadius="12dp"
+            app:layout_constraintTop_toBottomOf="@id/passwordEditTextLayout"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/passwordEditTextLayout" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -144,7 +148,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:text="@string/no_account"
-                android:textSize="14sp" />
+                style="@style/body2_r" />
 
             <TextView
                 android:id="@+id/tvRegister"
@@ -152,11 +156,22 @@
                 android:layout_height="wrap_content"
                 android:text="@string/register"
                 android:textColor="@android:color/holo_blue_dark"
-                android:textSize="14sp"
-                android:textStyle="bold"
+                style="@style/body2_sb"
                 tools:ignore="TouchTargetSizeCheck" />
 
         </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

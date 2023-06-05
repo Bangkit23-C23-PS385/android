@@ -101,39 +101,6 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/title_email"
-            style="@style/body2_m"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:text="Email*"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/lyt_nama" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/lyt_email"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title_email">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_email"
-                style="@style/body1_m"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                tools:text="example@gmail.com" />
-        </com.google.android.material.textfield.TextInputLayout>
-
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/title_jenis_kelamin"
             style="@style/body2_m"
@@ -145,7 +112,7 @@
             android:text="Jenis kelamin*"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/lyt_email" />
+            app:layout_constraintTop_toBottomOf="@id/lyt_nama" />
 
         <RadioGroup
             android:id="@+id/radio_group_jk"
@@ -189,8 +156,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            app:endIconDrawable="@drawable/ic_calendar"
-            app:endIconMode="custom"
+            app:endIconMode="clear_text"
+            app:startIconDrawable="@drawable/ic_calendar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/title_tanggal_lahir">
@@ -200,10 +167,9 @@
                 style="@style/body1_m"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="date|textAutoComplete"
-                tools:text="21 Agustus 2001" />
+                android:focusable="false"
+                tools:text="2 Agustus 2002"/>
         </com.google.android.material.textfield.TextInputLayout>
-
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/title_tinggi_badan"

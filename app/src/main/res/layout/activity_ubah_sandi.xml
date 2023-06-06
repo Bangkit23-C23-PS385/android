@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.ubahsandi.UbahSandiActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:gravity="center_vertical"
+                app:navigationIcon="@drawable/ic_arrow_left"
+                app:title="Ubah Sandi"
+                app:titleTextAppearance="@style/header" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/title_sandi_lama"
+            style="@style/body2_m"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/kata_sandi_lama"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topAppBar" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lyt_sandi_lama"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:endIconMode="password_toggle"
+            app:errorEnabled="true"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_sandi_lama"
+            app:startIconDrawable="@drawable/ic_baseline_lock_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_sandi_lama"
+                style="@style/body1_m"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/kata_sandi_lama"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/title_sandi_baru"
+            style="@style/body2_m"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/kata_sandi_baru"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lyt_sandi_lama" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lyt_sandi_baru"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:endIconMode="password_toggle"
+            app:errorEnabled="true"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_sandi_baru"
+            app:startIconDrawable="@drawable/ic_baseline_lock_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_sandi_baru"
+                style="@style/body1_m"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/kata_sandi_baru"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/title_konfirmasi_sandi_baru"
+            style="@style/body2_m"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/konfirmasi_kata_sandi"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lyt_sandi_baru" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lyt_konfirmasi_sandi_baru"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:endIconMode="password_toggle"
+            app:errorEnabled="true"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_konfirmasi_sandi_baru"
+            app:startIconDrawable="@drawable/ic_baseline_lock_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_konfirmasi_sandi_baru"
+                style="@style/body1_m"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/konfirmasi_kata_sandi"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_simpan"
+            style="@style/body1_sb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:gravity="center"
+            android:paddingHorizontal="32dp"
+            android:paddingVertical="10dp"
+            android:text="@string/simpan"
+            app:cornerRadius="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lyt_konfirmasi_sandi_baru" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

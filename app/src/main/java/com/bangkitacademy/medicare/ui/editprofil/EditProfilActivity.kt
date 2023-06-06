@@ -5,11 +5,11 @@ import android.content.Intent.ACTION_GET_CONTENT
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.InputType
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.widget.AppCompatRadioButton
+import com.bangkitacademy.medicare.R
 import com.bangkitacademy.medicare.databinding.ActivityEditProfilBinding
 import com.bangkitacademy.medicare.utils.dateFormatToDb
 import com.bangkitacademy.medicare.utils.dateFormatToUser
@@ -33,6 +33,7 @@ class EditProfilActivity : AppCompatActivity() {
 
         // handle top app bar back button
         binding.toolBar.setNavigationOnClickListener {
+            @Suppress("DEPRECATION")
             onBackPressed()
         }
 
@@ -61,7 +62,7 @@ class EditProfilActivity : AppCompatActivity() {
 
         datePicker.show(supportFragmentManager, "DATE_PICKER")
 
-        datePicker.addOnPositiveButtonClickListener { selectedDate ->
+        datePicker.addOnPositiveButtonClickListener {
             birthDate = datePicker.headerText.dateFormatToDb()
             binding.edtTanggalLahir.setText(datePicker.headerText.dateFormatToUser())
             binding.edtTanggalLahir.error = null
@@ -118,21 +119,33 @@ class EditProfilActivity : AppCompatActivity() {
 
         if (nama.isEmpty() || jenisKelamin.isEmpty() || tanggalLahir.isNullOrEmpty() || tinggiBadan.isEmpty() || beratBadan.isEmpty()) {
             if (nama.isEmpty()) {
-                binding.edtNama.requestFocus()
-                binding.edtNama.error = "Nama tidak boleh kosong"
+                binding.lytNama.requestFocus()
+                binding.lytNama.error = getString(R.string.empty_field)
+            } else {
+                binding.lytNama.error = null
             }
+
             if (tanggalLahir.isNullOrEmpty()) {
                 binding.edtTanggalLahir.requestFocus()
-                binding.edtTanggalLahir.error = "Tanggal lahir tidak boleh kosong"
+                binding.lytTanggalLahir.error = getString(R.string.empty_field)
+            } else {
+                binding.lytTanggalLahir.error = null
             }
+
             if (tinggiBadan.isEmpty()) {
-                binding.edtTinggiBadan.requestFocus()
-                binding.edtTinggiBadan.error = "Tinggi badan tidak boleh kosong"
+                binding.lytTinggiBadan.requestFocus()
+                binding.lytTinggiBadan.error = getString(R.string.empty_field)
+            } else {
+                binding.lytTinggiBadan.error = null
             }
+
             if (beratBadan.isEmpty()) {
-                binding.edtBeratBadan.requestFocus()
-                binding.edtBeratBadan.error = "Berat badan tidak boleh kosong"
+                binding.lytBeratBadan.requestFocus()
+                binding.lytBeratBadan.error = getString(R.string.empty_field)
+            } else {
+                binding.lytBeratBadan.error = null
             }
+
             if (jenisKelamin.isEmpty()) {
                 Toast.makeText(this, "Jenis kelamin tidak boleh kosong", Toast.LENGTH_SHORT).show()
             }

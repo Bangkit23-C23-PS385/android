@@ -112,7 +112,7 @@
                         android:ellipsize="end"
                         android:gravity="center_vertical"
                         android:maxLines="1"
-                        android:text="Edit Profil" />
+                        android:text="Edit profil" />
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -122,7 +122,7 @@
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/ubah_password"
+                    android:id="@+id/ubah_sandi"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="32dp">
@@ -143,7 +143,7 @@
                         android:ellipsize="end"
                         android:gravity="center_vertical"
                         android:maxLines="1"
-                        android:text="Ubah Password" />
+                        android:text="Ubah kata sandi" />
 
                     <ImageView
                         android:layout_width="wrap_content"

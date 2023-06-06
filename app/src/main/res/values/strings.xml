@@ -40,6 +40,14 @@
     <string name="verify">Untuk melakukan login, kamu perlu verifikasi akun kamu terlebih dahulu. Kami telah mengirim e-mail verifikasi kepada email kamu. Silahkan cek email kamu. Setelah email telah aktif, selanjutnya silahkan Masuk kembali.</string>
     <string name="password_too_short">Kata sandi harus berisi minimal 8 karakter</string>
     <string name="username_too_short">Username harus berisi minimal 5 karakter</string>
+    <string name="kata_sandi_lama">Kata sandi lama*</string>
+    <string name="kata_sandi_baru">Kata sandi baru*</string>
+    <string name="konfirmasi_kata_sandi">Konfirmasi kata sandi*</string>
+    <string name="simpan">SIMPAN</string>
+    <string name="password_not_match">Kata sandi tidak cocok</string>
+    <string name="password_invalid">8 - 15 karakter, Kombinasi huruf, angka, dan karakter special</string>
+    <string name="empty_field">Field ini tidak boleh kosong</string>
+    <string name="fitur_belum_tersedia">Fitur ini belum tersedia</string>
     <string-array name="gejala">
         <item>Otot lemah</item>
         <item>Lesu</item>

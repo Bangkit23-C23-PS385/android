@@ -157,10 +157,10 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             app:endIconMode="clear_text"
-            app:startIconDrawable="@drawable/ic_calendar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title_tanggal_lahir">
+            app:layout_constraintTop_toBottomOf="@id/title_tanggal_lahir"
+            app:startIconDrawable="@drawable/ic_calendar">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_tanggal_lahir"
@@ -168,7 +168,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:focusable="false"
-                tools:text="2 Agustus 2002"/>
+                tools:text="2 Agustus 2002" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textview.MaterialTextView
@@ -245,7 +245,7 @@
             android:gravity="center"
             android:paddingHorizontal="32dp"
             android:paddingVertical="10dp"
-            android:text="SIMPAN"
+            android:text="@string/simpan"
             app:cornerRadius="12dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

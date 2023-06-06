@@ -5,11 +5,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import com.bangkitacademy.medicare.R
 import com.bangkitacademy.medicare.databinding.FragmentProfilBinding
 import com.bangkitacademy.medicare.ui.editprofil.EditProfilActivity
+import com.bangkitacademy.medicare.ui.ubahsandi.UbahSandiActivity
 import com.google.android.material.snackbar.Snackbar
 
 class ProfilFragment : Fragment() {
@@ -27,9 +27,8 @@ class ProfilFragment : Fragment() {
 //            ViewModelProvider(this).get(ProfilViewModel::class.java)
 
         _binding = FragmentProfilBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
-        return root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -40,18 +39,23 @@ class ProfilFragment : Fragment() {
             startActivity(intent)
         }
 
+        binding.ubahSandi.setOnClickListener {
+            val intent = Intent(requireActivity(), UbahSandiActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.statusKesehatan.setOnClickListener {
-            showSnakcBar("Fitur ini belum tersedia")
+            showFiturBelumTersedia()
         }
 
         binding.indeksMassaTubuh.setOnClickListener {
-            showSnakcBar("Fitur ini belum tersedia")
+            showFiturBelumTersedia()
         }
 
     }
 
-    private fun showSnakcBar(message: String) {
-        Snackbar.make(requireView(), message, Snackbar.LENGTH_SHORT).show()
+    private fun showFiturBelumTersedia() {
+        Snackbar.make(requireView(), getString(R.string.fitur_belum_tersedia), Snackbar.LENGTH_SHORT).show()
     }
 
 

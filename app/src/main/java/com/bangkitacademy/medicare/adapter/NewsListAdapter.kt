@@ -1,7 +1,10 @@
 package com.bangkitacademy.medicare.adapter
 
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -23,7 +26,10 @@ class NewsListAdapter :
                 tvTglBerita.text = data.publishedAt
                 tvJudulBerita.text = data.title
 
-//                root.setOnClickListener { }
+                root.setOnClickListener {
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(data.url))
+                    startActivity(root.context, intent, null)
+                }
             }
         }
     }

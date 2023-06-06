@@ -78,9 +78,9 @@ class RegisterFragment : Fragment() {
                     binding.edPassword.error = getString(R.string.password_empty)
                 }
 
-                edPassword.length < 8 || !Pattern.compile("^(?=.*\\d)(?=\\S+$).{8,}$").matcher(edPassword).matches() -> {
-                    binding.edPassword.error = if (edPassword.length < 8) {
-                        getString(R.string.password_too_short)
+                edPassword.length !in 8..15 || !Pattern.compile("^(?=.*\\d)(?=\\S+$).{8,}$").matcher(edPassword).matches() -> {
+                    binding.edPassword.error = if (edPassword.length !in 8..15) {
+                        getString(R.string.password_length)
                     } else {
                         getString(R.string.invalid_password)
                     }

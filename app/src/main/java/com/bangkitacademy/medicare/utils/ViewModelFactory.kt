@@ -5,17 +5,20 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.bangkitacademy.medicare.data.preferences.UserPreference
 import com.bangkitacademy.medicare.di.Injection
+import com.bangkitacademy.medicare.repository.AppRepository
 import com.bangkitacademy.medicare.repository.AuthenticationRepository
 import com.bangkitacademy.medicare.repository.NewsRepository
 import com.bangkitacademy.medicare.ui.auth.AuthenticationViewModel
 import com.bangkitacademy.medicare.ui.auth.LoginViewModel
 import com.bangkitacademy.medicare.ui.auth.RegisterViewModel
 import com.bangkitacademy.medicare.ui.beranda.BerandaViewModel
+import com.bangkitacademy.medicare.ui.profil.ProfilViewModel
 
 class ViewModelFactory private constructor(
     private val newsRepository: NewsRepository,
     private val authenticationRepository: AuthenticationRepository,
-    private val pref: UserPreference
+    private val pref: UserPreference,
+    private val appRepository: AppRepository
 ) : ViewModelProvider.NewInstanceFactory() {
 
     @Suppress("UNCHECKED_CAST")
@@ -32,6 +35,9 @@ class ViewModelFactory private constructor(
         if (modelClass.isAssignableFrom(AuthenticationViewModel::class.java)) {
             return AuthenticationViewModel(pref) as T
         }
+        if (modelClass.isAssignableFrom(ProfilViewModel::class.java)) {
+            return ProfilViewModel(appRepository, pref) as T
+        }
 
         throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
     }
@@ -43,7 +49,8 @@ class ViewModelFactory private constructor(
             instance ?: ViewModelFactory(
                 Injection.provideNewsRepository(context),
                 Injection.authenticationRepository(context),
-                Injection.providePreferences(context)
+                Injection.providePreferences(context),
+                Injection.appRepository(context)
             )
         }.also {
             instance = it

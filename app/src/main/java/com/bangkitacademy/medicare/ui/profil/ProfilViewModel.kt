@@ -13,14 +13,18 @@ import com.bangkitacademy.medicare.utils.Result
 
 class ProfilViewModel(
     private val appRepository: AppRepository,
-    private val preferences: UserPreference
+    private val preferences: UserPreference? = null
 ) :
     ViewModel() {
 
     private val _user = MutableLiveData<Result<GetUserResponse>>()
     val user: LiveData<Result<GetUserResponse>> = _user
 
-
+    fun logout() {
+        viewModelScope.launch {
+            preferences?.clearUser()
+        }
+    }
 
     fun getUser() {
         viewModelScope.launch {

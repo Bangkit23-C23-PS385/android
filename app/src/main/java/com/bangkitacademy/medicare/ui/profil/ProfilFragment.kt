@@ -6,10 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.bangkitacademy.medicare.R
 import com.bangkitacademy.medicare.databinding.FragmentProfilBinding
+import com.bangkitacademy.medicare.ui.auth.AuthenticationActivity
 import com.bangkitacademy.medicare.ui.editprofil.EditProfilActivity
 import com.bangkitacademy.medicare.ui.ubahsandi.UbahSandiActivity
+import com.bangkitacademy.medicare.utils.ViewModelFactory
 import com.google.android.material.snackbar.Snackbar
 
 class ProfilFragment : Fragment() {
@@ -19,6 +22,9 @@ class ProfilFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+    private val profilViewModel by viewModels<ProfilViewModel>{
+        ViewModelFactory.getInstance(requireActivity().application)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -52,6 +58,12 @@ class ProfilFragment : Fragment() {
             showFiturBelumTersedia()
         }
 
+        binding.btnKeluar.setOnClickListener {
+            profilViewModel.logout()
+            val intent = Intent(requireActivity(), AuthenticationActivity::class.java)
+            startActivity(intent)
+            requireActivity().finish()
+        }
     }
 
     private fun showFiturBelumTersedia() {

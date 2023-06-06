@@ -7,6 +7,7 @@ import androidx.datastore.preferences.preferencesDataStore
 import com.bangkitacademy.medicare.data.preferences.UserPreference
 import com.bangkitacademy.medicare.data.remote.retrofit.ApiConfig
 import com.bangkitacademy.medicare.data.remote.retrofitpublic.PublicApiConfig
+import com.bangkitacademy.medicare.repository.AppRepository
 import com.bangkitacademy.medicare.repository.AuthenticationRepository
 import com.bangkitacademy.medicare.repository.NewsRepository
 
@@ -21,6 +22,11 @@ object Injection {
         return UserPreference.getInstance(context.dataStore)
     }
 
+    fun appRepository(context: Context): AppRepository {
+        val apiService = ApiConfig.getApiService()
+        val pref = UserPreference.getInstance(context.dataStore)
+        return AppRepository.getInstance(apiService, pref)
+    }
     fun authenticationRepository(context: Context): AuthenticationRepository {
         val apiService = ApiConfig.getApiService()
         val pref = UserPreference.getInstance(context.dataStore)

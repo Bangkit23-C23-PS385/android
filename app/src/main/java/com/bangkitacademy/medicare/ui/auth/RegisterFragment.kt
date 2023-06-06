@@ -96,10 +96,10 @@ class RegisterFragment : Fragment() {
 
                 isValid -> {
                     val body = RegisterRequest(
-                        edEmail,
-                        edName,
-                        edUsername,
-                        edPassword
+                        email = edEmail,
+                        name = edName,
+                        username = edUsername,
+                        password = edPassword
                     )
 
                     registerViewModel.setRegisterInfo(body)
@@ -115,7 +115,7 @@ class RegisterFragment : Fragment() {
                                 val mFragmentManager = parentFragmentManager
                                 mFragmentManager.commit {
                                     replace(
-                                        R.id.container,
+                                        R.id.frame_container,
                                         mVerifyFragment,
                                         VerifyFragment::class.java.simpleName)
                                     addToBackStack(null)

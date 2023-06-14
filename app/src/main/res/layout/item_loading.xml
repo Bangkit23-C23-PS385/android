@@ -26,12 +26,12 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/retry_button"
-        style="@style/body1_sb"
+        style="@style/Widget.App.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:paddingHorizontal="32dp"
         android:paddingVertical="10dp"
-        android:text="COBA LAGI"
+        android:text="@string/coba_lagi"
         app:cornerRadius="12dp" />
 </LinearLayout>

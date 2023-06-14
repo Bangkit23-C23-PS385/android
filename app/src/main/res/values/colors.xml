@@ -9,7 +9,13 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="primary_700">#17529E</color>
+    <color name="primary_500">#2E8DDC</color>
+    <color name="primary_600">#0167F1</color>
+    <color name="primary_100">#D5F3FD</color>
+
     <color name="danger_600">#DB3528</color>
+
     <color name="neutral_500">#667085</color>
     <color name="neutral_100">#F2F4F7</color>
+    <color name="neutral_50">#F9FAFB</color>
 </resources>

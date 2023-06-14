@@ -3,11 +3,10 @@ package com.bangkitacademy.medicare.ui.prediction
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.bangkitacademy.medicare.data.remote.request.PredictionRequest
+import com.bangkitacademy.medicare.repository.AppRepository
 
-class PredictionViewModel : ViewModel() {
+class PredictionViewModel(private val appRepository: AppRepository) : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is dashboard Fragment"
-    }
-    val text: LiveData<String> = _text
+    fun getSymptoms() = appRepository.getSymptoms()
 }

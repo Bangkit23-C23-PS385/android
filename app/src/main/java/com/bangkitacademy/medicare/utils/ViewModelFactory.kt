@@ -12,7 +12,9 @@ import com.bangkitacademy.medicare.ui.auth.AuthenticationViewModel
 import com.bangkitacademy.medicare.ui.auth.LoginViewModel
 import com.bangkitacademy.medicare.ui.auth.RegisterViewModel
 import com.bangkitacademy.medicare.ui.beranda.BerandaViewModel
+import com.bangkitacademy.medicare.ui.prediction.PredictionViewModel
 import com.bangkitacademy.medicare.ui.profil.ProfilViewModel
+import com.bangkitacademy.medicare.ui.resultprediction.ResultPredictionViewModel
 
 class ViewModelFactory private constructor(
     private val newsRepository: NewsRepository,
@@ -38,7 +40,12 @@ class ViewModelFactory private constructor(
         if (modelClass.isAssignableFrom(ProfilViewModel::class.java)) {
             return ProfilViewModel(appRepository, pref) as T
         }
-
+        if (modelClass.isAssignableFrom(PredictionViewModel::class.java)) {
+            return PredictionViewModel(appRepository) as T
+        }
+        if (modelClass.isAssignableFrom(ResultPredictionViewModel::class.java)) {
+            return ResultPredictionViewModel(appRepository) as T
+        }
         throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
     }
 

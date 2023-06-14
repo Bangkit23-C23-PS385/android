@@ -7,6 +7,7 @@ import android.util.Log
 import androidx.core.widget.doOnTextChanged
 import com.bangkitacademy.medicare.R
 import com.bangkitacademy.medicare.databinding.ActivityUbahSandiBinding
+import com.bumptech.glide.Glide.init
 
 class UbahSandiActivity : AppCompatActivity() {
 
@@ -24,7 +25,6 @@ class UbahSandiActivity : AppCompatActivity() {
             onBackPressed()
         }
 
-        init()
 
         binding.edtSandiBaru.doOnTextChanged { text, _, _, _ ->
             isValidPassword(text)
@@ -40,12 +40,7 @@ class UbahSandiActivity : AppCompatActivity() {
 
     }
 
-    private fun init() {
-        binding.edtSandiBaru.inputType =
-            InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
-        binding.edtKonfirmasiSandiBaru.inputType =
-            InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
-    }
+
 
     private fun isConfirmedPassword(text: CharSequence?) {
         val password = binding.edtSandiBaru.text.toString()

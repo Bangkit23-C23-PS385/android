@@ -20,9 +20,6 @@ class NewsListAdapter :
 
         fun bind(data: ArticlesItem) {
             binding.apply {
-                Glide.with(root.context)
-                    .load(data.urlToImage)
-                    .into(imgBerita)
                 tvTglBerita.text = data.publishedAt
                 tvJudulBerita.text = data.title
 

@@ -49,6 +49,12 @@
     <string name="password_length">Kata sandi harus berisi minimal 8 karakter dan tidak lebih dari 15 karakter</string>
     <string name="empty_field">Field ini tidak boleh kosong</string>
     <string name="fitur_belum_tersedia">Fitur ini belum tersedia</string>
+    <string name="berat_badan_kg">Berat Badan (kg)</string>
+    <string name="tinggi_badan_cm">Tinggi Badan (cm)</string>
+    <string name="tanggal_lahir">Tanggal lahir</string>
+    <string name="jenis_kelamin">Jenis kelamin</string>
+    <string name="keluar">KELUAR</string>
+    <string name="coba_lagi">COBA LAGI</string>
     <string-array name="gejala">
         <item>Otot lemah</item>
         <item>Lesu</item>

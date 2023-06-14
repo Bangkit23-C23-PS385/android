@@ -5,6 +5,7 @@
     android:id="@+id/halaman_prediksi"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/colorOnPrimary"
     android:fillViewport="true"
     tools:context=".ui.prediction.PredictionFragment">
 

@@ -2,7 +2,6 @@ package com.bangkitacademy.medicare.ui.profil
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,6 +21,7 @@ import com.google.android.material.snackbar.Snackbar
 class ProfilFragment : Fragment() {
 
     private var _binding: FragmentProfilBinding? = null
+    private lateinit var profileData: ProfileData
 
     private val binding get() = _binding!!
     private val profilViewModel by viewModels<ProfilViewModel> {
@@ -48,6 +48,7 @@ class ProfilFragment : Fragment() {
 
                 is Result.Success -> {
                     binding.progressBar.visibility = View.GONE
+                    profileData = result.data.data!!
                     setupProfile(result.data.data)
                 }
 
@@ -63,13 +64,11 @@ class ProfilFragment : Fragment() {
         }
 
         binding.editProfile.setOnClickListener {
-            val intent = Intent(requireActivity(), EditProfilActivity::class.java)
-            startActivity(intent)
+            moveToEditProfile(profileData)
         }
 
         binding.ubahSandi.setOnClickListener {
-            val intent = Intent(requireActivity(), UbahSandiActivity::class.java)
-            startActivity(intent)
+            showFiturBelumTersedia()
         }
 
         binding.statusKesehatan.setOnClickListener {
@@ -88,6 +87,12 @@ class ProfilFragment : Fragment() {
         }
     }
 
+    private fun moveToEditProfile(profileData: ProfileData) {
+        val intent = Intent(requireActivity(), EditProfilActivity::class.java)
+        intent.putExtra(EXTRA_PROFILE, profileData)
+        startActivity(intent)
+    }
+
     private fun setupProfile(user: ProfileData) {
         binding.txtNamaProfil.text = user.name
     }
@@ -100,9 +105,39 @@ class ProfilFragment : Fragment() {
         ).show()
     }
 
+    override fun onResume() {
+        super.onResume()
+        profilViewModel.getProfile().observe(requireActivity()) { result ->
+            when (result) {
+                is Result.Loading -> {
+                    binding.progressBar.visibility = View.VISIBLE
+                }
+
+                is Result.Success -> {
+                    binding.progressBar.visibility = View.GONE
+                    profileData = result.data.data!!
+                    setupProfile(result.data.data)
+                }
+
+                is Result.Error -> {
+                    binding.progressBar.visibility = View.GONE
+                    Toast.makeText(
+                        requireContext(),
+                        result.error,
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+        }
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    companion object {
+        private const val TAG = "ProfilFragment"
+        const val EXTRA_PROFILE = "extra_profile"
     }
 }

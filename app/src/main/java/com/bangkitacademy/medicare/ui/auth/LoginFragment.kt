@@ -81,6 +81,7 @@ class LoginFragment : Fragment() {
                                 binding.loginButton.isEnabled = true
                                 activity?.let {
                                     val intent = Intent(it, MainActivity::class.java)
+                                    intent.putExtra(MainActivity.EXTRA_NAME, result.data.data?.name)
                                     startActivity(intent)
                                     it.finish()
                                 }

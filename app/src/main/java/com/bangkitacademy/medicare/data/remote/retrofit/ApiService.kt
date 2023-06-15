@@ -34,4 +34,10 @@ interface ApiService {
 
     @GET("v1/profile")
     suspend fun getProfile() : GetProfileResponse
+
+    @GET("users/{userId}")
+    suspend fun getUser(
+        @Path("userId") userId: String
+    ) : GetUserResponse
+
 }

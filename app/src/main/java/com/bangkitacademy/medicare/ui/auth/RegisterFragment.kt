@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import com.bangkitacademy.medicare.R
 import com.bangkitacademy.medicare.data.remote.request.RegisterRequest
 import com.bangkitacademy.medicare.databinding.FragmentRegisterBinding
+import com.bangkitacademy.medicare.ui.auth.VerifyFragment.Companion.EXTRA_EMAIL
 import com.bangkitacademy.medicare.utils.ViewModelFactory
 import com.bangkitacademy.medicare.utils.Result
 import java.util.regex.Pattern
@@ -49,6 +50,8 @@ class RegisterFragment : Fragment() {
             val edUsername = binding.edUsername.text.toString()
             val edPassword = binding.edPassword.text.toString()
             val edConfirmPassword = binding.edConfirmPassword.text.toString()
+            val bundle = Bundle()
+            bundle.putString(EXTRA_EMAIL, edEmail)
 
             val isValid =
                 binding.edName.error == null && binding.edEmail.error == null && binding.edUsername.error == null && binding.edPassword.error == null && binding.edConfirmPassword.error == null
@@ -112,6 +115,7 @@ class RegisterFragment : Fragment() {
                             is Result.Success -> {
                                 binding.registerButton.isEnabled = true
                                 val mVerifyFragment = VerifyFragment()
+                                mVerifyFragment.arguments = bundle
                                 val mFragmentManager = parentFragmentManager
                                 mFragmentManager.commit {
                                     replace(

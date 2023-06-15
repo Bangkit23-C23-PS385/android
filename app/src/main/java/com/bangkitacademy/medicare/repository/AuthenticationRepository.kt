@@ -6,8 +6,10 @@ import com.bangkitacademy.medicare.data.preferences.UserModel
 import com.bangkitacademy.medicare.data.preferences.UserPreference
 import com.bangkitacademy.medicare.data.remote.request.LoginRequest
 import com.bangkitacademy.medicare.data.remote.request.RegisterRequest
+import com.bangkitacademy.medicare.data.remote.request.ResendRequest
 import com.bangkitacademy.medicare.data.remote.response.LoginResponse
 import com.bangkitacademy.medicare.data.remote.response.RegisterResponse
+import com.bangkitacademy.medicare.data.remote.response.ResendResponse
 import com.bangkitacademy.medicare.data.remote.retrofit.ApiConfig
 import com.bangkitacademy.medicare.data.remote.retrofit.ApiService
 import com.bangkitacademy.medicare.utils.Result
@@ -57,6 +59,30 @@ class AuthenticationRepository private constructor(
         emit(Result.Loading)
         try {
             val response = apiService.register(body)
+            if (response.status.toString().startsWith("4") || response.status.toString().startsWith("5")) {
+                emit(Result.Error(response.message))
+            } else {
+                emit(Result.Success(response))
+            }
+        } catch (e: Exception) {
+            val message = if (e is HttpException) {
+                val errorBody = e.response()?.errorBody()?.string()
+                try {
+                    JSONObject(errorBody ?: "").getString("message")
+                } catch (ex: JSONException) {
+                    "Snap, There is something wrong"
+                }
+            } else {
+                e.message.toString()
+            }
+            emit(Result.Error(message))
+        }
+    }
+
+    fun resend(body: ResendRequest) : LiveData<Result<ResendResponse>> = liveData {
+        emit(Result.Loading)
+        try {
+            val response = apiService.resend(body)
             if (response.status.toString().startsWith("4") || response.status.toString().startsWith("5")) {
                 emit(Result.Error(response.message))
             } else {

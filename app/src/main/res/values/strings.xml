@@ -55,4 +55,7 @@
     <string name="jenis_kelamin">Jenis kelamin</string>
     <string name="keluar">KELUAR</string>
     <string name="coba_lagi">COBA LAGI</string>
+    <string name="no_verify">Belum menerima email verifikasi?</string>
+    <string name="resend">Kirim Ulang!</string>
+    <string name="precaution">Cara Pencegahan</string>
 </resources>

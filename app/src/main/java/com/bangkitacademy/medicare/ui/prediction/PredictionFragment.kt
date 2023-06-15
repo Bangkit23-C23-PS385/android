@@ -6,21 +6,16 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import com.bangkitacademy.medicare.R
-import com.bangkitacademy.medicare.data.remote.request.PredictionRequest
 import com.bangkitacademy.medicare.databinding.FragmentPredictionBinding
 import com.bangkitacademy.medicare.ui.resultprediction.ResultPredictionActivity
 import com.bangkitacademy.medicare.ui.resultprediction.ResultPredictionActivity.Companion.EXTRA_RESULT
 import com.bangkitacademy.medicare.utils.Result
 import com.bangkitacademy.medicare.utils.ViewModelFactory
-import kotlinx.coroutines.NonDisposableHandle.parent
 
 class PredictionFragment : Fragment() {
 
@@ -127,6 +122,14 @@ class PredictionFragment : Fragment() {
         predictionViewModel.getSymptoms().observe(requireActivity()) { result ->
             when (result) {
                 is Result.Success -> {
+                    binding.progressBar.visibility = View.GONE
+                    binding.ddLayoutQuestion1.isEnabled = true
+                    binding.ddLayoutQuestion2.isEnabled = true
+                    binding.ddLayoutQuestion3.isEnabled = true
+                    binding.ddLayoutQuestion4.isEnabled = true
+                    binding.ddLayoutQuestion5.isEnabled = true
+                    binding.ddLayoutQuestion6.isEnabled = true
+                    binding.ddLayoutQuestion7.isEnabled = true
                     val items = result.data.data.symptoms
                     val symptomsId = items.map { it.symptomId }
                     val adapter = ArrayAdapter(
@@ -188,7 +191,6 @@ class PredictionFragment : Fragment() {
 
                 is Result.Error -> {
                     binding.progressBar.visibility = View.GONE
-                    binding.predictionButton.isEnabled = true
                     Toast.makeText(
                         requireContext(),
                         result.error,
@@ -196,7 +198,16 @@ class PredictionFragment : Fragment() {
                     ).show()
                 }
 
-                is Result.Loading -> {}
+                is Result.Loading -> {
+                    binding.progressBar.visibility = View.VISIBLE
+                    binding.ddLayoutQuestion1.isEnabled = false
+                    binding.ddLayoutQuestion2.isEnabled = false
+                    binding.ddLayoutQuestion3.isEnabled = false
+                    binding.ddLayoutQuestion4.isEnabled = false
+                    binding.ddLayoutQuestion5.isEnabled = false
+                    binding.ddLayoutQuestion6.isEnabled = false
+                    binding.ddLayoutQuestion7.isEnabled = false
+                }
             }
         }
 

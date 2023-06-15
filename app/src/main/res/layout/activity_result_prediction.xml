@@ -26,6 +26,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -58,8 +59,8 @@
                 style="@style/body2_r"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/symptom_name"
                 tools:text="Anemia adalah kondisi medis di mana tubuh tidak memiliki jumlah sel darah merah yang cukup atau hemoglobin yang cukup dalam sel darah merah untuk membawa oksigen ke seluruh tubuh dengan baik. Hemoglobin adalah protein dalam sel darah merah yang membantu mengikat oksigen dan mengirimkannya ke seluruh tubuh." />
@@ -69,8 +70,8 @@
                 style="@style/subtitle2_sb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/symptom_description"
                 tools:text="Cara Pencegahan" />
@@ -80,34 +81,13 @@
                 style="@style/body2_r"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/prevention_title"
                 tools:text="Pencegahan anemia tergantung pada penyebabnya, namun beberapa cara pencegahan anemia yang umumnya dapat dilakukan adalah dengan mengonsumsi makanan yang sehat dan seimbang, mengonsumsi vitamin B12 dan asam folat, menghindari perdarahan, menjalani pemeriksaan kesehatan secara teratur, dan mengonsumsi suplemen jika direkomendasikan oleh dokter. Penting untuk berkonsultasi dengan dokter atau ahli gizi untuk mengetahui cara terbaik untuk mencegah anemia yang sesuai dengan kondisi dan kebutuhan individu." />
-
-            <TextView
-                android:id="@+id/medicine_title"
-                style="@style/subtitle2_sb"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/prevention_description"
-                tools:text="Saran obat buat kamu" />
-
-            <TextView
-                android:id="@+id/suggested_medicine"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
-                android:layout_marginHorizontal="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/medicine_title"
-                tools:text="Paracetamol, Amoxilin, Granisetron"/>
 
             <ProgressBar
                 android:id="@+id/progress_bar"

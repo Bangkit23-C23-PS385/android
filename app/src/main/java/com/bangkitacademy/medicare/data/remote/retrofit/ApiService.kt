@@ -3,10 +3,12 @@ package com.bangkitacademy.medicare.data.remote.retrofit
 import com.bangkitacademy.medicare.data.remote.request.LoginRequest
 import com.bangkitacademy.medicare.data.remote.request.PredictionRequest
 import com.bangkitacademy.medicare.data.remote.request.RegisterRequest
+import com.bangkitacademy.medicare.data.remote.request.ResendRequest
 import com.bangkitacademy.medicare.data.remote.response.GetUserResponse
 import com.bangkitacademy.medicare.data.remote.response.LoginResponse
 import com.bangkitacademy.medicare.data.remote.response.PredictionResponse
 import com.bangkitacademy.medicare.data.remote.response.RegisterResponse
+import com.bangkitacademy.medicare.data.remote.response.ResendResponse
 import com.bangkitacademy.medicare.data.remote.response.SymptomsResponse
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -25,6 +27,9 @@ interface ApiService {
 
     @GET("v1/symptoms")
     suspend fun getSymptoms() : SymptomsResponse
+
+    @POST("v1/resend")
+    suspend fun resend(@Body body: ResendRequest): ResendResponse
 
     @GET("users/{userId}")
     suspend fun getUser(

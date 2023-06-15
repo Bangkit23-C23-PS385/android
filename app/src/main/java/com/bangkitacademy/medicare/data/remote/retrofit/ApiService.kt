@@ -4,6 +4,7 @@ import com.bangkitacademy.medicare.data.remote.request.LoginRequest
 import com.bangkitacademy.medicare.data.remote.request.PredictionRequest
 import com.bangkitacademy.medicare.data.remote.request.RegisterRequest
 import com.bangkitacademy.medicare.data.remote.request.ResendRequest
+import com.bangkitacademy.medicare.data.remote.response.GetProfileResponse
 import com.bangkitacademy.medicare.data.remote.response.GetUserResponse
 import com.bangkitacademy.medicare.data.remote.response.LoginResponse
 import com.bangkitacademy.medicare.data.remote.response.PredictionResponse
@@ -31,8 +32,12 @@ interface ApiService {
     @POST("v1/resend")
     suspend fun resend(@Body body: ResendRequest): ResendResponse
 
+    @GET("v1/profile")
+    suspend fun getProfile() : GetProfileResponse
+
     @GET("users/{userId}")
     suspend fun getUser(
         @Path("userId") userId: String
     ) : GetUserResponse
+
 }

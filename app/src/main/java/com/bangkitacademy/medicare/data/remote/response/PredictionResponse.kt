@@ -16,6 +16,21 @@ data class PredictionResponse(
 
 data class DataResult(
 
+	@field:SerializedName("precaution_2")
+	val precaution2: String,
+
 	@field:SerializedName("disease")
-	val disease: String
+	val disease: String,
+
+	@field:SerializedName("precaution_1")
+	val precaution1: String,
+
+	@field:SerializedName("precaution_4")
+	val precaution4: String,
+
+	@field:SerializedName("precaution_3")
+	val precaution3: String,
+
+	@field:SerializedName("description")
+	val description: String
 )

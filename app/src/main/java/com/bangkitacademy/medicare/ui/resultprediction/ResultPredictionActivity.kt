@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.content.ContentProviderCompat.requireContext
 import com.bangkitacademy.medicare.MainActivity
+import com.bangkitacademy.medicare.R
 import com.bangkitacademy.medicare.data.remote.request.PredictionRequest
 import com.bangkitacademy.medicare.databinding.ActivityResultPredictionBinding
 import com.bangkitacademy.medicare.utils.Result
@@ -45,11 +46,23 @@ class ResultPredictionActivity : AppCompatActivity() {
                 is Result.Loading -> {
                     binding.progressBar.visibility = View.VISIBLE
                 }
+
                 is Result.Success -> {
                     binding.progressBar.visibility = View.GONE
                     val disease = result.data.data.disease
+                    val description = result.data.data.description
+                    val precaution =
+                        "Ada beberapa cara penanggulangannya seperti:\n" +
+                        "● ${result.data.data.precaution1.replaceFirstChar { it.uppercase() }}\n" +
+                        "● ${result.data.data.precaution2.replaceFirstChar { it.uppercase() }}\n" +
+                        "● ${result.data.data.precaution3.replaceFirstChar { it.uppercase() }}\n" +
+                        "● ${result.data.data.precaution4.replaceFirstChar { it.uppercase() }}\n"
                     binding.symptomName.text = disease
+                    binding.symptomDescription.text = description
+                    binding.preventionTitle.text = getString(R.string.precaution)
+                    binding.preventionDescription.text = precaution
                 }
+
                 is Result.Error -> {
                     binding.progressBar.visibility = View.GONE
                     Toast.makeText(

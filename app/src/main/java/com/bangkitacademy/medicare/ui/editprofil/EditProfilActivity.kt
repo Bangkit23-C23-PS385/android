@@ -1,5 +1,6 @@
 package com.bangkitacademy.medicare.ui.editprofil
 
+import android.app.DatePickerDialog
 import android.content.Intent
 import android.content.Intent.ACTION_GET_CONTENT
 import android.net.Uri
@@ -12,10 +13,9 @@ import androidx.appcompat.widget.AppCompatRadioButton
 import com.bangkitacademy.medicare.R
 import com.bangkitacademy.medicare.databinding.ActivityEditProfilBinding
 import com.bangkitacademy.medicare.utils.dateFormatToDb
-import com.bangkitacademy.medicare.utils.dateFormatToUser
 import com.bangkitacademy.medicare.utils.uriToFile
-import com.google.android.material.datepicker.MaterialDatePicker
 import java.io.File
+import java.util.Calendar
 
 class EditProfilActivity : AppCompatActivity() {
 
@@ -57,16 +57,18 @@ class EditProfilActivity : AppCompatActivity() {
      * open date picker when date of birth edit text clicked
      */
     private fun openDatePicker() {
-        val datePicker = MaterialDatePicker.Builder.datePicker().setTitleText("Pilih Tanggal Lahir")
-            .setSelection(MaterialDatePicker.todayInUtcMilliseconds()).build()
+        val calendar = Calendar.getInstance()
 
-        datePicker.show(supportFragmentManager, "DATE_PICKER")
+        val years = calendar.get(Calendar.YEAR)
+        val months = calendar.get(Calendar.MONTH)
+        val days = calendar.get(Calendar.DAY_OF_MONTH)
 
-        datePicker.addOnPositiveButtonClickListener {
-            birthDate = datePicker.headerText.dateFormatToDb()
-            binding.edtTanggalLahir.setText(datePicker.headerText.dateFormatToUser())
-            binding.edtTanggalLahir.error = null
-        }
+        val datePickerDialog = DatePickerDialog(this, { _, year, month, dayOfMonth ->
+            val date = "$dayOfMonth/${month + 1}/$year"
+            birthDate = date.dateFormatToDb()
+            binding.edtTanggalLahir.setText(date)
+        }, years, months, days)
+        datePickerDialog.show()
     }
 
     /*
@@ -111,9 +113,9 @@ class EditProfilActivity : AppCompatActivity() {
         if (selectedJkId != -1) {
             val selectedJk = binding.radioGroupJk.findViewById(selectedJkId) as AppCompatRadioButton
             jenisKelamin = if (selectedJk.text == "Laki-laki") {
-                "L"
+                "LAKILAKI"
             } else {
-                "P"
+                "PEREMPUAN"
             }
         }
 

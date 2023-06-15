@@ -20,29 +20,23 @@ val timeStamp: String = SimpleDateFormat(
 ).format(System.currentTimeMillis())
 
 fun String.dateFormatToDb(): String {
-    val deviceLocale = Locale.getDefault().country
-
-    val format = if (deviceLocale.equals("ID")) {
-        SimpleDateFormat("d MMM yyyy", Locale.getDefault())
-    } else {
-        SimpleDateFormat("MMM d, yyyy", Locale.getDefault())
-    }
+    val format = SimpleDateFormat("d/M/yyyy", Locale.getDefault())
 
     val date = format.parse(this) as Date
     return SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(date)
 }
 
-fun String.dateFormatToUser(): String {
-    val deviceLocale = Locale.getDefault().country
-
-    val format = if (deviceLocale.equals("ID")) {
-        SimpleDateFormat("d MMM yyyy", Locale.getDefault())
-    } else {
-        SimpleDateFormat("MMM d, yyyy", Locale.getDefault())
-    }
+fun String.dateFormatFromDbToUser(): String {
+    val format = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
 
     val date = format.parse(this) as Date
-    return DateFormat.getDateInstance(DateFormat.LONG).format(date)
+    return SimpleDateFormat("d/M/yyyy", Locale.getDefault()).format(date)
+}
+
+fun String.dateFromPublicApiToUser(): String {
+    val format = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.US)
+    val date = format.parse(this) as Date
+    return DateFormat.getDateInstance(DateFormat.FULL).format(date)
 }
 
 fun createCustomTempFile(context: Context): File {

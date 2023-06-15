@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bangkitacademy.medicare.data.remote.response.ArticlesItem
 import com.bangkitacademy.medicare.databinding.ItemBerandaBinding
+import com.bangkitacademy.medicare.utils.dateFromPublicApiToUser
 import com.bumptech.glide.Glide
 
 class NewsListAdapter :
@@ -20,7 +21,7 @@ class NewsListAdapter :
 
         fun bind(data: ArticlesItem) {
             binding.apply {
-                tvTglBerita.text = data.publishedAt
+                tvTglBerita.text = data.publishedAt.dateFromPublicApiToUser()
                 tvJudulBerita.text = data.title
 
                 root.setOnClickListener {

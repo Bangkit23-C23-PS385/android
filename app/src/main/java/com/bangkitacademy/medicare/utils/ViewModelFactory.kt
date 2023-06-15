@@ -13,6 +13,7 @@ import com.bangkitacademy.medicare.ui.auth.LoginViewModel
 import com.bangkitacademy.medicare.ui.auth.RegisterViewModel
 import com.bangkitacademy.medicare.ui.auth.VerifyViewModel
 import com.bangkitacademy.medicare.ui.beranda.BerandaViewModel
+import com.bangkitacademy.medicare.ui.editprofil.EditProfilViewModel
 import com.bangkitacademy.medicare.ui.prediction.PredictionViewModel
 import com.bangkitacademy.medicare.ui.profil.ProfilViewModel
 import com.bangkitacademy.medicare.ui.resultprediction.ResultPredictionViewModel
@@ -49,6 +50,9 @@ class ViewModelFactory private constructor(
         }
         if (modelClass.isAssignableFrom(VerifyViewModel::class.java)) {
             return VerifyViewModel(authenticationRepository) as T
+        }
+        if (modelClass.isAssignableFrom(EditProfilViewModel::class.java)) {
+            return EditProfilViewModel(appRepository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
     }

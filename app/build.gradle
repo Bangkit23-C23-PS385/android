@@ -111,4 +111,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:3.0.2' //RecyclerViewActions
     implementation 'androidx.test.espresso:espresso-idling-resource:3.5.1'
     androidTestImplementation 'androidx.test.espresso:espresso-intents:3.5.1'//IntentsTestRule
+
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 }

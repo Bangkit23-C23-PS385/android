@@ -16,7 +16,7 @@ MediCare, Your Personal Health Assistant is an application to analyze and provid
 - Kotlin
 - Android Studio
 
-## Download APK LINK
+## Download APK
 Link - (TBD)
 
 ## How to Replicate

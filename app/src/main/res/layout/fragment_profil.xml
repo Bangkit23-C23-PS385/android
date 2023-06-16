@@ -54,7 +54,7 @@
                     android:id="@+id/img_foto_profil"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:src="@drawable/img_default_profil" />
+                    android:src="@drawable/default_img_profile" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/txt_nama_profil"

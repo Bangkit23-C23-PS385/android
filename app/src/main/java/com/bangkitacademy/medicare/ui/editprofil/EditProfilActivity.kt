@@ -12,7 +12,6 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.widget.AppCompatRadioButton
-import com.bangkitacademy.medicare.MainActivity
 import com.bangkitacademy.medicare.R
 import com.bangkitacademy.medicare.data.remote.request.UpdateProfileRequest
 import com.bangkitacademy.medicare.data.remote.response.ProfileData
@@ -23,6 +22,7 @@ import com.bangkitacademy.medicare.utils.ViewModelFactory
 import com.bangkitacademy.medicare.utils.dateFormatFromDbToUser
 import com.bangkitacademy.medicare.utils.dateFormatToDb
 import com.bangkitacademy.medicare.utils.uriToFile
+import com.google.android.material.snackbar.Snackbar
 import java.io.File
 import java.util.Calendar
 
@@ -54,7 +54,11 @@ class EditProfilActivity : AppCompatActivity() {
 
         // handle button edit foto
         binding.lytFotoProfil.setOnClickListener {
-            startGallery()
+            Snackbar.make(
+                binding.root,
+                getString(R.string.fitur_belum_tersedia),
+                Snackbar.LENGTH_SHORT
+            ).show()
         }
 
         binding.btnSimpan.setOnClickListener {
@@ -117,11 +121,12 @@ class EditProfilActivity : AppCompatActivity() {
         val months = calendar.get(Calendar.MONTH)
         val days = calendar.get(Calendar.DAY_OF_MONTH)
 
-        val datePickerDialog = DatePickerDialog(this, { _, year, month, dayOfMonth ->
-            val date = "$dayOfMonth/${month + 1}/$year"
-            birthDate = date.dateFormatToDb()
-            binding.edtTanggalLahir.setText(date)
-        }, years, months, days)
+        val datePickerDialog =
+            DatePickerDialog(this, { _, year, month, dayOfMonth ->
+                val date = "$dayOfMonth/${month + 1}/$year"
+                birthDate = date.dateFormatToDb()
+                binding.edtTanggalLahir.setText(date)
+            }, years, months, days)
         datePickerDialog.show()
     }
 
@@ -132,7 +137,7 @@ class EditProfilActivity : AppCompatActivity() {
         val intent = Intent()
         intent.action = ACTION_GET_CONTENT
         intent.type = "image/*"
-        val chooser = Intent.createChooser(intent, "Pilih Foto Profil")
+        val chooser = Intent.createChooser(intent, getString(R.string.pilih_foto_profil))
         launcherIntentGallery.launch(chooser)
     }
 

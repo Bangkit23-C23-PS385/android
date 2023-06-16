@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bangkitacademy.medicare.data.remote.response.ArticlesItem
 import com.bangkitacademy.medicare.databinding.ItemBerandaBinding
 import com.bangkitacademy.medicare.utils.dateFromPublicApiToUser
-import com.bumptech.glide.Glide
 
 class NewsListAdapter :
     PagingDataAdapter<ArticlesItem, NewsListAdapter.MyViewHolder>(DIFF_CALLBACK) {
@@ -32,7 +31,7 @@ class NewsListAdapter :
         }
     }
 
-    override fun onBindViewHolder(holder: NewsListAdapter.MyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         getItem(position)?.let { holder.bind(it) }
     }
 

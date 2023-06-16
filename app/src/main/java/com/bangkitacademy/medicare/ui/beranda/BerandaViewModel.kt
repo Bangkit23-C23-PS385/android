@@ -1,9 +1,7 @@
 package com.bangkitacademy.medicare.ui.beranda
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.switchMap
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
@@ -15,19 +13,5 @@ class BerandaViewModel(
 ) : ViewModel() {
 
     val news: LiveData<PagingData<ArticlesItem>> = newsRepository.getNews().cachedIn(viewModelScope)
-
-//    private val loadTrigger = MutableLiveData(Unit)
-//
-//    init {
-//        getNews()
-//    }
-//
-//    val listUser = loadTrigger.switchMap {
-//        newsRepository.getNews()
-//    }
-//
-//    fun getNews() {
-//        loadTrigger.value = Unit
-//    }
 
 }

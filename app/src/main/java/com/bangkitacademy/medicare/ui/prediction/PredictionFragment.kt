@@ -231,7 +231,6 @@ class PredictionFragment : Fragment() {
                 val intent = Intent (it, ResultPredictionActivity::class.java)
                 intent.putStringArrayListExtra(EXTRA_RESULT, ArrayList(selectedItems))
                 it.startActivity(intent)
-                it.finish()
             }
 
             resetView()
@@ -253,7 +252,6 @@ class PredictionFragment : Fragment() {
             }
             question.setText("", false)
         }
-        visibleLayoutIndex = -1
         selectedSymptomsCount = 0
         updateButtonState()
     }
@@ -261,6 +259,13 @@ class PredictionFragment : Fragment() {
     private fun updateButtonState() {
         binding.predictionButton.isEnabled = selectedSymptomsCount >= 3
         Log.d("selectedSymptomsCount", selectedSymptomsCount.toString())
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setupAction()
+        addSymptom()
+        checkButton()
     }
 
     override fun onDestroyView() {

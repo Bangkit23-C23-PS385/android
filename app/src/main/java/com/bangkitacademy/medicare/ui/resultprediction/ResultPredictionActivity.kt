@@ -31,9 +31,10 @@ class ResultPredictionActivity : AppCompatActivity() {
     private fun setupView() {
         supportActionBar?.hide()
         binding.toolbar.setNavigationOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
+            onBackPressed()
+//            val intent = Intent(this, MainActivity::class.java)
+//            startActivity(intent)
+//            finish()
         }
 
         val selectedItems = intent.getStringArrayListExtra(EXTRA_RESULT)
@@ -74,13 +75,13 @@ class ResultPredictionActivity : AppCompatActivity() {
         }
     }
 
-    @Deprecated("Deprecated")
-    override fun onBackPressed() {
-        super.onBackPressed()
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
-        finish()
-    }
+//    @Deprecated("Deprecated")
+//    override fun onBackPressed() {
+//        super.onBackPressed()
+//        val intent = Intent(this, MainActivity::class.java)
+//        startActivity(intent)
+//        finish()
+//    }
 
     companion object {
         const val EXTRA_RESULT = "extra_result"

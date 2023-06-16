@@ -210,10 +210,12 @@
             android:layout_gravity="bottom|end"
             android:layout_marginTop="64dp"
             android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/primary_600"
             android:contentDescription="@string/fab_content_desc"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/baseline_add_24" />
+            app:tint="@color/white"
+            app:srcCompat="@drawable/baseline_add_24"/>
 
         <ProgressBar
             android:id="@+id/progress_bar"

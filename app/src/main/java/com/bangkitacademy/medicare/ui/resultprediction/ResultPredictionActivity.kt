@@ -49,6 +49,7 @@ class ResultPredictionActivity : AppCompatActivity() {
 
                 is Result.Success -> {
                     binding.progressBar.visibility = View.GONE
+                    binding.imageView.visibility = View.VISIBLE
                     val disease = result.data.data.disease
                     val description = result.data.data.description
                     val precaution =

@@ -42,6 +42,8 @@
                 android:src="@drawable/ic_result_prediction"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                android:visibility="gone"
+                tools:visibility="visible"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView

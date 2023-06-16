@@ -1,6 +1,5 @@
 package com.bangkitacademy.medicare.data.pagingdata
 
-import android.icu.lang.UCharacter.GraphemeClusterBreak.L
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.bangkitacademy.medicare.data.remote.response.ArticlesItem
@@ -23,7 +22,7 @@ class NewsPagingSource(private val publicApiService: PublicApiService) :
             LoadResult.Page(
                 data = responseData.articles,
                 prevKey = if (position == INITIAL_PAGE_INDEX) null else position - 1,
-                nextKey = if (responseData.articles.isNullOrEmpty()) null else position + 1
+                nextKey = if (responseData.articles.isEmpty()) null else position + 1
             )
         } catch (exception: Exception) {
             return LoadResult.Error(exception)

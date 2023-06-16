@@ -13,7 +13,6 @@ import com.bangkitacademy.medicare.data.remote.response.ProfileData
 import com.bangkitacademy.medicare.databinding.FragmentProfilBinding
 import com.bangkitacademy.medicare.ui.auth.AuthenticationActivity
 import com.bangkitacademy.medicare.ui.editprofil.EditProfilActivity
-import com.bangkitacademy.medicare.ui.ubahsandi.UbahSandiActivity
 import com.bangkitacademy.medicare.utils.Result
 import com.bangkitacademy.medicare.utils.ViewModelFactory
 import com.google.android.material.snackbar.Snackbar
@@ -137,7 +136,6 @@ class ProfilFragment : Fragment() {
     }
 
     companion object {
-        private const val TAG = "ProfilFragment"
         const val EXTRA_PROFILE = "extra_profile"
     }
 }

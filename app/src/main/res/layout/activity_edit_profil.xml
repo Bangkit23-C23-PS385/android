@@ -56,7 +56,7 @@
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_gravity="center"
-                android:src="@drawable/img_default_profil" />
+                android:src="@drawable/default_img_profile" />
 
             <ImageView
                 android:id="@+id/img_edit_foto_profil"

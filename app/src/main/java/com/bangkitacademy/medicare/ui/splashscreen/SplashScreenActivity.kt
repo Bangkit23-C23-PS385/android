@@ -10,7 +10,6 @@ import com.bangkitacademy.medicare.MainActivity
 import com.bangkitacademy.medicare.R
 import com.bangkitacademy.medicare.data.preferences.UserModel
 import com.bangkitacademy.medicare.data.remote.retrofit.ApiConfig
-import com.bangkitacademy.medicare.databinding.ActivitySplashScreenBinding
 import com.bangkitacademy.medicare.ui.auth.AuthenticationActivity
 import com.bangkitacademy.medicare.ui.auth.AuthenticationViewModel
 import com.bangkitacademy.medicare.utils.ViewModelFactory

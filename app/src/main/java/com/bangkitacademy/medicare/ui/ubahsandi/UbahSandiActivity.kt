@@ -2,12 +2,10 @@ package com.bangkitacademy.medicare.ui.ubahsandi
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.InputType
 import android.util.Log
 import androidx.core.widget.doOnTextChanged
 import com.bangkitacademy.medicare.R
 import com.bangkitacademy.medicare.databinding.ActivityUbahSandiBinding
-import com.bumptech.glide.Glide.init
 
 class UbahSandiActivity : AppCompatActivity() {
 
